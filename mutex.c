@@ -6,7 +6,7 @@
 /*   By: eassamer <eassamer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:43:08 by eassamer          #+#    #+#             */
-/*   Updated: 2022/03/13 14:00:11 by eassamer         ###   ########.fr       */
+/*   Updated: 2022/03/13 14:20:41 by eassamer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	create_mutex(t_args *main_s)
 	{
 		if (pthread_mutex_init(&main_s->forks[i], NULL) != 0)
 		{
-			write(2,"failed to init mutexs\n",22);
+			write(2, "failed to init mutexs\n", 22);
 			destroy_all(main_s);
 			break ;
 		}

@@ -6,7 +6,7 @@
 /*   By: eassamer <eassamer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 11:02:36 by eassamer          #+#    #+#             */
-/*   Updated: 2022/03/13 14:10:30 by eassamer         ###   ########.fr       */
+/*   Updated: 2022/03/13 14:21:11 by eassamer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,5 @@ int	main(int ac, char **av)
 			printf("\x1B[31mERROR\n");
 	}
 	else
-			printf("\x1B[31mERROR\n");
+		printf("\x1B[31mERROR\n");
 }
