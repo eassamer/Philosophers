@@ -18,7 +18,7 @@ all: $(NAME)
 
 $(NAME) : $(OBJS) $(HEADER)
 		$(GCC) $(CFLAGS) $(OBJS) -o $(NAME)
-		@echo "\n\t"------rah tcompila------
+		@echo "\x1B[36m\n\t"------rah tcompila------
 
 clean:
 	rm -rf $(OBJS)

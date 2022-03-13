@@ -1,54 +1,64 @@
-# include "philo.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eassamer <eassamer@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/13 11:04:44 by eassamer          #+#    #+#             */
+/*   Updated: 2022/03/13 12:00:59 by eassamer         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "philo.h"
 
-int allocate_struct(t_args *main_s)
+int	allocate_struct(t_args *main_s)
 {
-        main_s->philo = malloc(sizeof(t_info) * main_s->num_philos);
-        if (!main_s->philo)
-        {
-            free(main_s->philo);
-            return (0);
-        }
-        main_s->forks = malloc(sizeof(t_info) * main_s->num_philos);
-        if (!main_s->forks)
-        {
-            free(main_s->philo);
-            free(main_s->forks);
-            return (0);
-        }
-        main_s->check_mutex = malloc(sizeof(pthread_mutex_t) * 1);
-        if (!main_s->check_mutex)
-        {
-            free(main_s->check_mutex);
-            return (0);
-        }
-        return (1);
+	main_s->philo = malloc(sizeof(t_info) * main_s->num_philos);
+	if (!main_s->philo)
+	{
+		free(main_s->philo);
+		return (0);
+	}
+	main_s->forks = malloc(sizeof(t_info) * main_s->num_philos);
+	if (!main_s->forks)
+	{
+		free(main_s->philo);
+		return (0);
+	}
+	main_s->check_mutex = malloc(sizeof(pthread_mutex_t) * 1);
+	if (!main_s->check_mutex)
+	{
+		free(main_s->check_mutex);
+		return (0);
+	}
+	return (1);
 }
 
-int check_digit(char *av)
+int	check_digit(char *av)
 {
-    int i;
+	int	i;
 
-    i = -1;
-    while (++i)
-    {
-        if (!ft_isdigit(av[i]))
-            return (0);        
-    }
-    return (1);
+	i = -1;
+	while (++i)
+	{
+		if (!ft_isdigit(av[i]))
+			return (0);
+	}
+	return (1);
 }
 
-int check_args(int ac, char **av)
+int	check_args(int ac, char **av)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (++i < ac)
-    {
-        if (check_digit(av[i]) && ft_atoi(av[i]) <= 0)
-            return (0);
-    }
-    return (1);
+	i = 0;
+	while (++i < ac)
+	{
+		if (check_digit(av[i]) && ft_atoi(av[i]) <= 0)
+			return (0);
+	}
+	return (1);
 }
 
 int	ft_atoi(char *str)
